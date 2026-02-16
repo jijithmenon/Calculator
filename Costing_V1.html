@@ -76,7 +76,7 @@
         
         /* Cell styling */
         .fixed { 
-            background-color: #e8f0f8; 
+            background-color: #e8f0f8 !important; 
             font-weight: bold; 
             text-align: left;
             padding-left: 6px;
@@ -388,28 +388,28 @@
     <script>
         // ===== LABOUR COST CALCULATOR =====
         const originalData = [
-            { cat: "Kitchen Stewarding", name: "SANJAY", order: 0, loading: 0, shifts: 0, extra: 0, rates: 550, fare: 0, usesSpecialFormula: true },
-            { cat: "Kitchen Stewarding", name: "SHEKHAR(500/1500/2000)", order: 0, loading: 0, shifts: 0, extra: 0, rates: 600, fare: 0, usesSpecialFormula: true },
-            { cat: "Kitchen Stewarding", name: "MANOJ", order: 0, loading: 0, shifts: 0, extra: 0, rates: 525, fare: 0, usesSpecialFormula: true },
-            { cat: "ROJYA", name: "ANAND/RAJ/FAROOQ", order: 0, loading: 0, shifts: 0, extra: 0, rates: 500, fare: 0, usesSpecialFormula: false },
-            { cat: "SERVICE BOY", name: "RAKESH", order: 0, loading: 0, shifts: 0, extra: 0, rates: 495, fare: 0, usesSpecialFormula: false },
-            { cat: "MAHARAJ", name: "VIJAY", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1600, fare: 0, usesSpecialFormula: false },
-            { cat: "BAI", name: "MAHARAJ", order: 0, loading: 0, shifts: 0, extra: 0, rates: 400, fare: 0, usesSpecialFormula: false },
-            { cat: "TAI WAITER", name: "SONU/BABU", order: 0, loading: 0, shifts: 0, extra: 0, rates: 550, fare: 0, usesSpecialFormula: false },
-            { cat: "Model", name: "MONICA/GUJARAT", order: 0, loading: 0, shifts: 0, extra: 0, rates: 2850, fare: 0, usesSpecialFormula: false },
-            { cat: "GUJARAT", name: "KARIGAR", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "PRO", name: "MINAL/SHEETAL/RESHMA", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "PRO", name: "GIRLS", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1200, fare: 0, usesSpecialFormula: false },
-            { cat: "CATERING BOYS", name: "COLLEGE", order: 0, loading: 0, shifts: 0, extra: 0, rates: 800, fare: 0, usesSpecialFormula: false },
-            { cat: "LIVE MITHAI", name: "PARASNATJI", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "SOUTH INDIAN", name: "RAMESH/SUNDAR", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1475, fare: 0, usesSpecialFormula: false },
-            { cat: "TANDOOR", name: "AMIR BHAI", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "PANI PURI", name: "MADAM/SAHIL", order: 0, loading: 0, shifts: 0, extra: 0, rates: 20, fare: 0, usesSpecialFormula: false },
-            { cat: "BARBECUE", name: "PINTU", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1300, fare: 0, usesSpecialFormula: false },
-            { cat: "BT COUNTER", name: "GORELAL", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "FARSAN", name: "BHARAT", order: 0, loading: 0, shifts: 0, extra: 0, rates: 215, fare: 0, usesSpecialFormula: false },
-            { cat: "KARIGAR", name: "RAJESH", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "MANAGERS", name: "SUMITRA", order: 0, loading: 0, shifts: 0, extra: 0, rates: 3500, fare: 0, usesSpecialFormula: false }
+            { cat: "Kitchen Stewarding", name: "SANJAY", order: 0, loading: 0, shifts: 0, extra: 0, rates: 550, fare: 0, usesSpecialFormula: true, showSpecialColor: false },
+            { cat: "Kitchen Stewarding", name: "SHEKHAR(500/1500/2000)", order: 0, loading: 0, shifts: 0, extra: 0, rates: 600, fare: 0, usesSpecialFormula: true, showSpecialColor: false },
+            { cat: "Kitchen Stewarding", name: "MANOJ", order: 0, loading: 0, shifts: 0, extra: 0, rates: 525, fare: 0, usesSpecialFormula: true, showSpecialColor: false },
+            { cat: "ROJYA", name: "ANAND/RAJ/FAROOQ", order: 0, loading: 0, shifts: 0, extra: 0, rates: 500, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "SERVICE BOY", name: "RAKESH", order: 0, loading: 0, shifts: 0, extra: 0, rates: 495, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "MAHARAJ", name: "VIJAY", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1600, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "BAI", name: "MAHARAJ", order: 0, loading: 0, shifts: 0, extra: 0, rates: 400, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "TAI WAITER", name: "SONU/BABU", order: 0, loading: 0, shifts: 0, extra: 0, rates: 550, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "Model", name: "MONICA/GUJARAT", order: 0, loading: 0, shifts: 0, extra: 0, rates: 2850, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "GUJARAT", name: "KARIGAR", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "PRO", name: "MINAL/SHEETAL/RESHMA", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "PRO", name: "GIRLS", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1200, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "CATERING BOYS", name: "COLLEGE", order: 0, loading: 0, shifts: 0, extra: 0, rates: 800, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "LIVE MITHAI", name: "PARASNATJI", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "SOUTH INDIAN", name: "RAMESH/SUNDAR", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1475, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "TANDOOR", name: "AMIR BHAI", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "PANI PURI", name: "MADAM/SAHIL", order: 0, loading: 0, shifts: 0, extra: 0, rates: 20, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "BARBECUE", name: "PINTU", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1300, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "BT COUNTER", name: "GORELAL", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "FARSAN", name: "BHARAT", order: 0, loading: 0, shifts: 0, extra: 0, rates: 215, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "KARIGAR", name: "RAJESH", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false, showSpecialColor: false },
+            { cat: "MANAGERS", name: "SUMITRA", order: 0, loading: 0, shifts: 0, extra: 0, rates: 3500, fare: 0, usesSpecialFormula: false, showSpecialColor: false }
         ];
 
         function populateTable() {
@@ -418,15 +418,14 @@
             
             originalData.forEach((data) => {
                 const row = tbody.insertRow();
-                const specialClass = data.usesSpecialFormula ? 'special' : '';
                 row.innerHTML = `
-                    <td class="fixed ${specialClass}">${data.cat}</td>
-                    <td class="fixed ${specialClass}">${data.name}</td>
+                    <td class="fixed">${data.cat}</td>
+                    <td class="fixed">${data.name}</td>
                     <td><input type="number" class="order" value="${data.order}" min="0" onchange="calculateAll()"></td>
                     <td><input type="number" class="loading" value="${data.loading}" min="0" onchange="calculateAll()"></td>
                     <td><input type="number" class="shifts" value="${data.shifts}" min="0" onchange="calculateAll()"></td>
                     <td><input type="number" class="extra" value="${data.extra}" min="0" onchange="calculateAll()"></td>
-                    <td class="fixed ${specialClass}">${data.rates}</td>
+                    <td class="fixed">${data.rates}</td>
                     <td><input type="number" class="fare" value="${data.fare}" step="0.01" min="0" onchange="calculateAll()"></td>
                     <td class="rowTotal">-</td>
                 `;
