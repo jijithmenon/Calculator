@@ -8,14 +8,14 @@
         * {
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 10px;
             background-color: #f5f5f5;
         }
-
+        
         .section {
             background: white;
             padding: 15px;
@@ -24,33 +24,33 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             overflow-x: auto;
         }
-
+        
         h2 { 
             color: #333; 
             margin-top: 0;
             font-size: 18px;
         }
-
+        
         /* Table styling */
         .table-container {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
-
+        
         table { 
             border-collapse: collapse; 
             width: 100%; 
             margin-top: 15px;
             min-width: 600px; /* Prevents table from becoming too narrow */
         }
-
+        
         th, td { 
             border: 1px solid #ddd; 
             padding: 6px 4px;
             text-align: right; 
             font-size: 12px;
         }
-
+        
         th { 
             background-color: #4472C4; 
             color: white; 
@@ -60,7 +60,7 @@
             top: 0;
             z-index: 10;
         }
-
+        
         /* Input fields */
         input { 
             width: 55px; 
@@ -69,34 +69,33 @@
             text-align: right;
             font-size: 12px;
         }
-
+        
         input.wide {
             width: 150px;
         }
-
+        
         /* Cell styling */
         .fixed { 
-            background-color: #e8f0f8; 
             background-color: #e8f0f8 !important; 
             font-weight: bold; 
             text-align: left;
             padding-left: 6px;
         }
-
+        
         .special { 
             background-color: #ffe6cc !important; 
         }
-
+        
         .total { 
             font-weight: bold; 
             background-color: #fff2cc; 
         }
-
+        
         .grandtotal { 
             background-color: #ffff00; 
             font-weight: bold; 
         }
-
+        
         /* Button styling */
         .button-container {
             margin-top: 15px;
@@ -104,7 +103,7 @@
             flex-wrap: wrap;
             gap: 8px;
         }
-
+        
         button { 
             padding: 10px 14px;
             background: #007cba; 
@@ -116,55 +115,55 @@
             flex: 1 1 auto;
             min-width: 140px;
         }
-
+        
         button:hover { 
             background: #0056b3; 
         }
-
+        
         button.add-btn {
             background: #28a745;
         }
-
+        
         button.add-btn:hover {
             background: #218838;
         }
-
+        
         /* Mobile optimizations */
         @media (max-width: 768px) {
             body {
                 padding: 5px;
             }
-
+            
             .section {
                 padding: 10px;
                 margin-bottom: 15px;
             }
-
+            
             h2 {
                 font-size: 16px;
             }
-
+            
             th, td {
                 font-size: 11px;
                 padding: 5px 3px;
             }
-
+            
             input {
                 width: 50px;
                 font-size: 11px;
                 padding: 3px 2px;
             }
-
+            
             input.wide {
                 width: 120px;
             }
-
+            
             button {
                 font-size: 13px;
                 padding: 8px 10px;
                 min-width: 120px;
             }
-
+            
             /* Make first two columns sticky on mobile */
             .labour-table td:nth-child(1),
             .labour-table th:nth-child(1),
@@ -174,75 +173,75 @@
                 background-color: inherit;
                 z-index: 5;
             }
-
+            
             .labour-table th:nth-child(1),
             .labour-table td:nth-child(1) {
                 left: 0;
             }
-
+            
             .labour-table th:nth-child(2),
             .labour-table td:nth-child(2) {
                 left: 80px;
             }
         }
-
+        
         @media (max-width: 480px) {
             h2 {
                 font-size: 14px;
             }
-
+            
             th, td {
                 font-size: 10px;
                 padding: 4px 2px;
             }
-
+            
             input {
                 width: 45px;
                 font-size: 10px;
             }
-
+            
             input.wide {
                 width: 100px;
             }
-
+            
             button {
                 font-size: 12px;
                 padding: 7px 8px;
                 min-width: 100px;
             }
-
+            
             .button-container {
                 gap: 6px;
             }
         }
-
+        
         /* Grand total section styling */
         .grand-total-table {
             min-width: 300px;
         }
-
+        
         .grand-total-table td {
             font-size: 14px;
             padding: 10px;
         }
-
+        
         .final-total-row {
             background-color: #ff6b6b; 
             color: white; 
             font-size: 16px;
         }
-
+        
         @media (max-width: 480px) {
             .grand-total-table td {
                 font-size: 12px;
                 padding: 8px;
             }
-
+            
             .final-total-row {
                 font-size: 14px;
             }
         }
-
+        
         /* Scroll hint */
         .scroll-hint {
             text-align: center;
@@ -251,7 +250,7 @@
             margin-top: 5px;
             display: none;
         }
-
+        
         @media (max-width: 768px) {
             .scroll-hint {
                 display: block;
@@ -389,28 +388,6 @@
     <script>
         // ===== LABOUR COST CALCULATOR =====
         const originalData = [
-            { cat: "Kitchen Stewarding", name: "SANJAY", order: 0, loading: 0, shifts: 0, extra: 0, rates: 550, fare: 0, usesSpecialFormula: true },
-            { cat: "Kitchen Stewarding", name: "SHEKHAR(500/1500/2000)", order: 0, loading: 0, shifts: 0, extra: 0, rates: 600, fare: 0, usesSpecialFormula: true },
-            { cat: "Kitchen Stewarding", name: "MANOJ", order: 0, loading: 0, shifts: 0, extra: 0, rates: 525, fare: 0, usesSpecialFormula: true },
-            { cat: "ROJYA", name: "ANAND/RAJ/FAROOQ", order: 0, loading: 0, shifts: 0, extra: 0, rates: 500, fare: 0, usesSpecialFormula: false },
-            { cat: "SERVICE BOY", name: "RAKESH", order: 0, loading: 0, shifts: 0, extra: 0, rates: 495, fare: 0, usesSpecialFormula: false },
-            { cat: "MAHARAJ", name: "VIJAY", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1600, fare: 0, usesSpecialFormula: false },
-            { cat: "BAI", name: "MAHARAJ", order: 0, loading: 0, shifts: 0, extra: 0, rates: 400, fare: 0, usesSpecialFormula: false },
-            { cat: "TAI WAITER", name: "SONU/BABU", order: 0, loading: 0, shifts: 0, extra: 0, rates: 550, fare: 0, usesSpecialFormula: false },
-            { cat: "Model", name: "MONICA/GUJARAT", order: 0, loading: 0, shifts: 0, extra: 0, rates: 2850, fare: 0, usesSpecialFormula: false },
-            { cat: "GUJARAT", name: "KARIGAR", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "PRO", name: "MINAL/SHEETAL/RESHMA", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "PRO", name: "GIRLS", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1200, fare: 0, usesSpecialFormula: false },
-            { cat: "CATERING BOYS", name: "COLLEGE", order: 0, loading: 0, shifts: 0, extra: 0, rates: 800, fare: 0, usesSpecialFormula: false },
-            { cat: "LIVE MITHAI", name: "PARASNATJI", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "SOUTH INDIAN", name: "RAMESH/SUNDAR", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1475, fare: 0, usesSpecialFormula: false },
-            { cat: "TANDOOR", name: "AMIR BHAI", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "PANI PURI", name: "MADAM/SAHIL", order: 0, loading: 0, shifts: 0, extra: 0, rates: 20, fare: 0, usesSpecialFormula: false },
-            { cat: "BARBECUE", name: "PINTU", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1300, fare: 0, usesSpecialFormula: false },
-            { cat: "BT COUNTER", name: "GORELAL", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "FARSAN", name: "BHARAT", order: 0, loading: 0, shifts: 0, extra: 0, rates: 215, fare: 0, usesSpecialFormula: false },
-            { cat: "KARIGAR", name: "RAJESH", order: 0, loading: 0, shifts: 0, extra: 0, rates: 1500, fare: 0, usesSpecialFormula: false },
-            { cat: "MANAGERS", name: "SUMITRA", order: 0, loading: 0, shifts: 0, extra: 0, rates: 3500, fare: 0, usesSpecialFormula: false }
             { cat: "Kitchen Stewarding", name: "SANJAY", order: 0, loading: 0, shifts: 0, extra: 0, rates: 550, fare: 0, usesSpecialFormula: true, showSpecialColor: false },
             { cat: "Kitchen Stewarding", name: "SHEKHAR(500/1500/2000)", order: 0, loading: 0, shifts: 0, extra: 0, rates: 600, fare: 0, usesSpecialFormula: true, showSpecialColor: false },
             { cat: "Kitchen Stewarding", name: "MANOJ", order: 0, loading: 0, shifts: 0, extra: 0, rates: 525, fare: 0, usesSpecialFormula: true, showSpecialColor: false },
@@ -438,20 +415,16 @@
         function populateTable() {
             const tbody = document.getElementById('tableBody');
             tbody.innerHTML = '';
-
+            
             originalData.forEach((data) => {
                 const row = tbody.insertRow();
-                const specialClass = data.usesSpecialFormula ? 'special' : '';
                 row.innerHTML = `
-                    <td class="fixed ${specialClass}">${data.cat}</td>
-                    <td class="fixed ${specialClass}">${data.name}</td>
                     <td class="fixed">${data.cat}</td>
                     <td class="fixed">${data.name}</td>
                     <td><input type="number" class="order" value="${data.order}" min="0" onchange="calculateAll()"></td>
                     <td><input type="number" class="loading" value="${data.loading}" min="0" onchange="calculateAll()"></td>
                     <td><input type="number" class="shifts" value="${data.shifts}" min="0" onchange="calculateAll()"></td>
                     <td><input type="number" class="extra" value="${data.extra}" min="0" onchange="calculateAll()"></td>
-                    <td class="fixed ${specialClass}">${data.rates}</td>
                     <td class="fixed">${data.rates}</td>
                     <td><input type="number" class="fare" value="${data.fare}" step="0.01" min="0" onchange="calculateAll()"></td>
                     <td class="rowTotal">-</td>
@@ -463,14 +436,14 @@
         function calculateRow(rowIndex) {
             const row = document.querySelectorAll('#tableBody tr')[rowIndex];
             const data = originalData[rowIndex];
-
+            
             const order = parseFloat(row.cells[2].querySelector('input.order').value) || 0;
             const loading = parseFloat(row.cells[3].querySelector('input.loading').value) || 0;
             const shifts = parseFloat(row.cells[4].querySelector('input.shifts').value) || 0;
             const extra = parseFloat(row.cells[5].querySelector('input.extra').value) || 0;
             const rates = parseFloat(row.cells[6].textContent) || 0;
             const fare = parseFloat(row.cells[7].querySelector('input.fare').value) || 0;
-
+            
             let total;
             if (data.usesSpecialFormula) {
                 // Special formula: (E*G)+(F*G)+((C-D)*H)
@@ -479,7 +452,7 @@
                 // Regular formula: (E*G)+(C*H)+(F*G)
                 total = (shifts * rates) + (order * fare) + (extra * rates);
             }
-
+            
             row.cells[8].textContent = Math.round(total);
             return { order, loading, shifts, extra, rates, fare, total };
         }
@@ -487,7 +460,7 @@
         function calculateAll() {
             let totals = { order: 0, loading: 0, shifts: 0, extra: 0, rates: 0, fare: 0, grand: 0 };
             const rows = document.querySelectorAll('#tableBody tr');
-
+            
             rows.forEach((row, index) => {
                 const rowData = calculateRow(index);
                 totals.order += rowData.order;
@@ -506,7 +479,7 @@
             document.getElementById('totalG').textContent = totals.rates.toFixed(0);
             document.getElementById('totalH').textContent = totals.fare.toFixed(0);
             document.getElementById('totalI').textContent = totals.grand.toFixed(0);
-
+            
             updateGrandTotal();
         }
 
@@ -689,7 +662,7 @@
             const labourTotal = parseFloat(document.getElementById('totalI').textContent) || 0;
             const foodTotal = parseFloat(document.getElementById('food-grand-total').textContent) || 0;
             const othersTotal = parseFloat(document.getElementById('others-grand-total').textContent) || 0;
-
+            
             document.getElementById('final-labour-total').textContent = labourTotal.toFixed(2);
             document.getElementById('final-food-total').textContent = foodTotal.toFixed(2);
             document.getElementById('final-others-total').textContent = othersTotal.toFixed(2);
